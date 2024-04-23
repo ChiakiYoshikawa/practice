@@ -18,3 +18,4 @@ Route::get('/', function () {
 });
 
 Route::get('/list', [App\Http\Controllers\ArticleController::class, 'showList'])->name('list');
+Route::get('/regist',[App\Http\Controllers\ArticleController::class, 'showRegistForm'])->name('regist');

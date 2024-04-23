@@ -15,4 +15,13 @@ class Article extends Model
         $articles = DB::table('articles')->get();
         return $articles;
     }
+
+    public function registArticle($data) {
+        // 登録処理
+        DB::table('articles')->insert([
+            'title' => $data->title,
+            'url' => $data->url,
+            'comment' => $data->comment,
+        ]);
+    }
 }
