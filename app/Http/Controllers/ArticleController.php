@@ -22,11 +22,9 @@ class ArticleController extends Controller
 
     public function registSubmit(ArticleRequest $request) {
 
-        // トランザクション開始
         DB::beginTransaction();
     
         try {
-            // 登録処理呼び出し
             $model = new Article();
             $model->registArticle($request);
             DB::commit();
@@ -34,8 +32,7 @@ class ArticleController extends Controller
             DB::rollback();
             return back();
         }
-    
-        // 処理が完了したらregistにリダイレクト
+        
         return redirect(route('regist'));
     }
 }

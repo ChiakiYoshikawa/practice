@@ -17,7 +17,7 @@ class Article extends Model
     }
 
     public function registArticle($data) {
-        // 登録処理
+
         DB::table('articles')->insert([
             'title' => $data->title,
             'url' => $data->url,
